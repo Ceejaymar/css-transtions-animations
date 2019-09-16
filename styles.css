@@ -1,0 +1,225 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-1 {
+  width: 400px;
+  height: 400px;
+  background-color: firebrick;
+  position: relative;
+  /* right: -200px;
+  top: -100px; */
+}
+
+.box-2 {
+  width: 100px;
+  height: 100px;
+  background-color: blueviolet;
+  position: absolute;
+  top: 100px;
+  left: 50px;
+}
+
+.box-3 {
+  width: 400px;
+  height: 400px;
+  background-color: firebrick;
+  margin-top: 200px;
+  position: relative;
+  transition: transform 1s ease-in-out;
+}
+
+.box-3:hover {
+  /* transform: translateX(200px); */
+  transform: scale(2);
+}
+
+.button-1 {
+  margin: 200px 0;
+  padding: 50px;
+  border: 3px solid rebeccapurple;
+  color: rebeccapurple;
+  text-decoration: none;
+  font-size: 2rem;
+  position: relative;
+  display: inline-block;
+  transition: color 1s;
+  overflow: hidden;
+}
+
+.button-1:hover {
+  color: white;
+}
+
+.button-1:before {
+  content: "";
+  position: absolute;
+  background-color: rebeccapurple;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: translateX(-100%);
+  transition: transform 1s;
+  /* color: white; */
+}
+
+.button-1:hover:before {
+  transform: translateX(0);
+}
+
+
+.button-2 {
+  margin: 200px 0;
+  padding: 50px;
+  border: 3px solid lightcoral;
+  color: lightcoral;
+  text-decoration: none;
+  font-size: 2rem;
+  position: relative;
+  display: inline-block;
+  transition: color 1s;
+  overflow: hidden;
+}
+
+.button-2:hover {
+  color: white;
+}
+
+.button-2:before {
+  content: "";
+  position: absolute;
+  background-color: lightcoral;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: rotateX(90deg);
+  transition: transform 1s;
+}
+
+.button-2:hover:before {
+  transform: rotateX(0);
+}
+
+.button-2:after {
+  content: "";
+  position: absolute;
+  background-color: lightcoral;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: rotateY(90deg);
+  transition: transform 1s;
+}
+
+.button-2:hover:after {
+  transform: rotateY(0);
+}
+
+.box-4 {
+  width: 200px;
+  height: 200px;
+  background-color: aquamarine;
+  position: relative;
+  /* animation-name: movingBox; */
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  /* animation-direction: reverse; */
+  /* animation-fill-mode: both; */
+  /* animation-delay: 3s; */
+}
+
+@keyframes movingBox {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(500px); }
+  100% { transform: translateY(-500px); }
+}
+
+.box-5 {
+  border-top: 5px solid firebrick;
+  border-left: 5px solid firebrick;
+  border-bottom: 5px solid firebrick;
+  border-right: 5px solid yellow;
+  width: 400px;
+  height: 400px;
+  margin-top: 200px;
+  border-radius: 50%;
+  animation: rotate 1s infinite linear reverse 2s;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0); }
+  100% {transform: rotate(360deg)}
+}
+
+.city {
+  height: 100vh;
+  width: 100%;
+  background-color: firebrick;
+  background-image: url('/assets/bg.jpg');
+  background-position: bottom left;
+  background-size: cover;
+  /* animation: moving 10s infinite linear; */
+  position: relative;
+}
+
+@keyframes moving {
+  0% { background-position: bottom left; }
+  100% { background-position: bottom right; }
+}
+
+img {
+  height: 100px;
+  position: absolute;
+  bottom: 50px;
+  transform: translateX(400px);
+}
+
+.creation {
+  margin-top: 200px;
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  position: relative;
+  transform: rotate(45deg);
+  animation: beat 2s infinite;
+}
+
+.creation:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+.creation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  transform: translateX(-50%);
+  border-radius: 50%;
+}
+
+@keyframes beat {
+  0% { transform: scale(1) rotate(45deg); }
+  15% { transform: scale(1) rotate(45deg); }
+  25% { transform: scale(1.5) rotate(45deg); }
+  30% { transform: scale(1.1) rotate(45deg); }
+  50% { transform: scale(1.5) rotate(45deg); }
+  70% { transform: scale(1.2) rotate(45deg); }
+  80% { transform: scale(1.4) rotate(45deg); }
+  100% { transform: scale(1) rotate(45deg); }
+}
